@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="POST">
+    {{form.hidden_tag()}}
+    {{form.sno.label}}
+    {{form.sno()}}
+    <br>
+    {{form.pno.label}}
+    {{form.pno()}}
+    <br>
+    {{form.qty.label}}
+    {{form.qty()}}
+    <br>
+    {{form.price.label}}
+    {{form.price()}}
+    <br>
+    {{form.submit}}            
+</form>
+{% if message != "" %}
+    <p>{{message}}</p>
+{% endif %}
+
+{% endblock %}

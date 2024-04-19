@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="POST">
+    <input value=1.1 name='statusChange' hidden>  
+    <button type="submit">Submit</button>         
+</form>
+<table>
+    <tr>
+        <th>Sno</th>
+        <th>Sname</th>
+        <th>Status</th>
+        <th>City</th>
+    </tr>
+{% for supplier in suppliers %}
+<tr>
+    <td>{{supplier.Sno}}</td>
+    <td>{{supplier.Sname}}</td> 
+    <td>{{supplier.Status}}</td>
+    <td>{{supplier.City}}</td>
+</tr>
+{% endfor %}
+
+{% endblock %}
