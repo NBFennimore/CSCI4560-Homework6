@@ -1,9 +1,9 @@
-from flask import request, jsonify, redirect, render_template, url_for
+from flask import request, render_template, url_for
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, PasswordField, TextAreaField, IntegerField, FloatField, SelectField, TimeField, DateField, DecimalField
-from wtforms.validators import DataRequired, Email, NumberRange
+from wtforms import StringField, SubmitField, IntegerField, DecimalField
+from wtforms.validators import DataRequired
 
 app = Flask(__name__)
 username = 'root'
@@ -31,7 +31,6 @@ class Supplier(db.Model):
         self.Sname = sname
         self.Status = status
         self.City = city
-
 
 class Part(db.Model):
     __tablename__ = "Part"
@@ -74,17 +73,6 @@ class PartLookupForm(FlaskForm):
     part_no = sno = StringField("Part Number", validators=[DataRequired()])
     submit = SubmitField("Submit")
 
-
-class RegisterPatientForm(FlaskForm):
-    fname = StringField("First Name:", validators=[DataRequired()])
-    lname = StringField("Last Name:", validators=[DataRequired()])
-    insurance = StringField("Insurance Name:", validators=[DataRequired()])
-    policy_num = IntegerField("Policy Number:", validators=[DataRequired()])
-    phone = StringField("Phone Number:", validators=[DataRequired()])
-    address = StringField("Address:", validators=[DataRequired()])
-    econtact = StringField("Emergency Contact:", validators=[DataRequired()])
-    econtact_phone = StringField("Emergency Contact Number:", validators=[DataRequired()])
-    submit = SubmitField("Submit")
 
 
 @app.route("/",  methods=['GET', 'POST'])

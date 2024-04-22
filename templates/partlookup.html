@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
+<br>
+<br>
+<br>
 <form method="POST">
     {{form.hidden_tag()}}
     {{form.part_no.label}}
@@ -8,6 +11,7 @@
     <br>
     {{form.submit}}            
 </form>
+<br>
 <table>
     <tr>
         <th>Sno</th>

@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
+<br>
+<br>
 <form method="POST">
     {{form.hidden_tag()}}
     {{form.sno.label}}
@@ -17,6 +19,7 @@
     <br>
     {{form.submit}}            
 </form>
+<br>
 {% if message != "" %}
     <p>{{message}}</p>
 {% endif %}
